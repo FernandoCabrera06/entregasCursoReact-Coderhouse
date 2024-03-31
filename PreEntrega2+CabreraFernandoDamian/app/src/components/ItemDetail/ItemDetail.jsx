@@ -1,4 +1,5 @@
 import ItemCount from "../ItemCount/ItemCount"
+import "./ItemDetail.css"
 
 const ItemDetail = ({ id, description, img, category, price, stock }) => {
   return (
@@ -12,7 +13,10 @@ const ItemDetail = ({ id, description, img, category, price, stock }) => {
       <section>
         <p className="Info"> Categoria: {category}</p>
         <p className="Info"> Precio: ${price}</p>
-        <p className="Info"> Stock disponible: {stock}</p>
+        <p className={stock ? "Info" : "Info sinStock"}>
+          {" "}
+          Stock disponible: {stock}
+        </p>
       </section>
       <footer className="ItemFooter">
         <ItemCount
